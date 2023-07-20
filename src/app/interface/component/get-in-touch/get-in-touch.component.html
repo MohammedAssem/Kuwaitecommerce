@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="text-center text-success" style="font-size:2.5rem">Get in Touch</h1>
+  <div class="row py-4">
+    <div class="col-md-6">
+      <div class="">
+        <img src="../../../../assets/img/app-get-in-touch.png" class="img-fluid" alt="">
+      </div>
+    </div>
+    <div class="col-md-5 offset-md-1 pt-4">
+      <div class="">
+        <form [formGroup]="CuntactUs" (ngSubmit)="CuntactUsMethod()">
+
+          <div class="form-group py-2">
+            <div class="row">
+              <div class="col-6">
+                <div class="">
+                <input class="form-control mt-2" placeholder="First Name" type="text"
+                  formControlName="FirstName">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="">
+                <input class="form-control mt-2" placeholder="last Name" type="text"
+                  formControlName="LastName">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="">
+                <input class="form-control mt-2" placeholder="Phone Number" type="text"
+                  formControlName="PhoneNumber">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="">
+                <input class="form-control mt-2" placeholder="Email Address" type="text"
+                  formControlName="Emailaddress">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="">
+                <textarea class="form-control mt-2" placeholder="Comment" type="text"
+                  formControlName="Comment"></textarea>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <button class="btn btn-success my-2 px-4 " type="submit" [disabled]="CuntactUs.invalid">Send</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

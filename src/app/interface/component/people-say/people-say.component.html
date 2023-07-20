@@ -1,0 +1,15 @@
+<div class="py-5 pb-3 px-3 mt-3 " >
+  <owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let slide of comments">
+      <ng-template carouselSlide [id]="slide.id">
+        <!-- <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title"> -->
+        <p class="pt-1" style="font-size:1.5rem;line-height: 1.1;">"{{slide.titel}}"</p>
+        <h3 class="text-center pt-2 text-success" style="font-size:1.8rem">{{slide.name}}</h3>
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>
+
+
+</div>

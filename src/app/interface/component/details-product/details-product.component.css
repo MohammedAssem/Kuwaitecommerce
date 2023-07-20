@@ -1,0 +1,28 @@
+@import"../../../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+.reviewInput input{
+  width: 20px;
+  height: 20px;
+}
+
+.colorOrange{
+  color: #FFAB48;
+}
+.bgOrange{
+  background-color: #FFAB48;
+}
+.backgroundBtn{
+  background-color: #7ECD95;
+
+  }
+.colorsusc{
+   color: #7ECD95;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal-dialog-centered{
+    align-items: end;
+  }
+}
+h3,.fa-xl{
+  line-height: 1;
+}

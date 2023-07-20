@@ -1,0 +1,60 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/dist2
+/deployment
+/tmp
+/out-tsc
+/apps/map/map/src/assets/Scripts/esri/
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+.angular
+environments/environment.ts
+
+node_modules_
+/.vs/SourceCode/FileContentIndex/a7ca53cd-cae1-43a1-bd29-e28ad7148783.vsidx
+/.vs/SourceCode/FileContentIndex/6ddc9908-470f-477f-810d-fe59c21c0a21.vsidx
+/.vs/SourceCode/FileContentIndex/56bb21d0-0e99-4b18-9cd2-71c552b49d34.vsidx
+/.vs/SourceCode/FileContentIndex/41ca8e33-c89e-4eac-9c1f-0a21637e7aa7.vsidx
+/.vs/SourceCode/FileContentIndex/004b08b6-9bbd-4306-b39b-839be7c6b1ec.vsidx
+/.vs/SourceCode/FileContentIndex/f1eced0e-4895-4eeb-bc9c-303e4daf898c.vsidx
+/.vs/SourceCode/FileContentIndex/c9b2609f-fc04-45bb-a938-67f757f3efa3.vsidx
+/.vs/SourceCode/FileContentIndex/677efe07-1c1d-4c1e-aed3-dad77ea6f448.vsidx
+/.vs/SourceCode/FileContentIndex/6378143f-697f-44b7-b019-e19aad77a822.vsidx
+/.vs/SourceCode/FileContentIndex/2d9dfcf6-5804-4365-9f2e-a236eb7e9804.vsidx
+/.vs/SourceCode/FileContentIndex/10d5e8d2-1dc3-49ee-9ac7-bf0ff4354b2e.vsidx
+*.vsidx
+/apps/map/map/src/assets/Scripts/esri.zip

@@ -1,0 +1,127 @@
+@import"../../../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+.input-with-icon ,.form-group {
+  position: relative;
+}
+
+.input-with-icon input,.form-group input {
+  padding-left: 33px;
+}
+
+.input-with-icon i,.form-group i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-group i{
+  top:58%
+}
+.inputSearch{
+  width:40%;
+}
+*{
+  font-family: Inter  ;
+}
+
+.Regstration-form{
+  right: 0;
+  width:350px
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+    .navbar-brand img{
+      width: 90%;
+    }
+    .parentLogo{
+      width: 57%;
+      text-align: center;
+    }
+    .inputSearch{
+      width:100%;
+      margin: 1vh auto;
+
+    }
+    .Regstration-form{
+      bottom:  0;
+    }
+}
+@media only screen and (max-width: 600px) {
+  .inputSearch{
+    width:80%;
+    margin: 1vh auto;
+    width: 100%;
+  }
+  .navbar-brand{
+    margin-right: 2px;
+  }
+  .IconCard.navbar-toggler{
+    padding: 0 6px;
+  }
+  .Regstration-form{
+    position: fixed;
+    bottom:  0;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .inputSearch{
+    width:80%;
+    margin: auto;
+  }
+  .parentLogo{
+    padding-left: 10px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {.inputSearch{
+  width:40%;
+  margin: auto;
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .inputSearch{
+    width:25%;
+    margin: auto;
+  }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .inputSearch{
+    width:32%;
+    margin: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1300px) {
+  .inputSearch{
+    width:40%;
+    margin: auto;
+  }
+}
+
+.displayPassword{
+  display: none;
+}
+
+a{text-decoration:none;cursor: pointer ;}
+
+
+
+.form-group li{
+  list-style-type: none;
+}
+.dropdown-menu{
+  --bs-dropdown-min-width: 55px !important;
+}
+
