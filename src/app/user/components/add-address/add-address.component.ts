@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserApiService } from 'src/app/shared/user-api.service';
 
 @Component({
   selector: 'app-add-address',
@@ -8,20 +10,26 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AddAddressComponent {
 
+constructor(private _UserApi:UserApiService,private router:Router) {}
 
   AddNewAddress = new FormGroup({
-    Name: new FormControl(null, Validators.required),
-    phone: new FormControl(null, Validators.required),
-    StreetNumber: new FormControl(null, Validators.required),
-    AreaNumber: new FormControl(null, Validators.required),
-    BlockNumber: new FormControl(null),
-    VillaHouseNumber: new FormControl(null, Validators.required),
-    AddressType: new FormControl(null),
-    defaultAddresse : new FormControl(false),
+    name: new FormControl("", Validators.required),
+    phone_number: new FormControl("", Validators.required),
+    street_name: new FormControl("", Validators.required),
+    area_name: new FormControl("", Validators.required),
+    block: new FormControl("", Validators.required),
+    additional_instructions: new FormControl("" , Validators.required),
+    address_type: new FormControl("", Validators.required),
+    default :new FormControl (false, Validators.required),
   })
 
 
   AddNewAddressMethod() {
     console.log(this.AddNewAddress.value)
+    this._UserApi.addNewAddress(this.AddNewAddress.value).subscribe((responce)=>
+    {
+      console.log(responce)
+      this.router.navigate(['/home'])
+    })
   }
 }

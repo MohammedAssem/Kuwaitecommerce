@@ -1,54 +1,63 @@
-
-<div class="container py-2">
+<div class="container py-2 minHiegt ">
   <h2 class="py-3">My Profile</h2>
-  <div class="p-3 border rounded bg-light my-2">
-    <h3>General Info</h3>
-    <div class="row">
-      <div class="col-3">
-        <div class="form-group">
-          <label for=""></label>
-          <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-          <small id="helpId" class="text-muted">Help text</small>
+  <div class="p-3 border   bg-gray my-2">
+    <h3 class="fa-xl text-bold py-2">General Info</h3>
+    <form [formGroup]="UpdateProfile" (ngSubmit)="UpdateProfileMethod()">
+      <div class="row">
+
+        <div class="col-3">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" formControlName="first_name" class="form-control" placeholder="first name">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" formControlName="last_name" class="form-control"
+              placeholder="last name">
+          </div>
+        </div>
+        <div class="">
+          <button type="submit" class="btn btn-success px-3 py-2 my-3"
+            [disabled]="UpdateProfile.invalid">Update</button>
         </div>
       </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label for=""></label>
-          <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-          <small id="helpId" class="text-muted">Help text</small>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="form-group">
-          <label for=""></label>
-          <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-          <small id="helpId" class="text-muted">Help text</small>
-        </div>
-      </div>
-      <button class="btn btn-success p-3">Update</button>
-    </div>
+    </form>
+
   </div>
-  <div class="p-3 border rounded bg-light my-2">
-    <h3>Security</h3>
+  <div class="p-3 border   bg-gray my-3">
+    <h3 class="fa-xl text-bold py-2"> Security</h3>
     <div class="row">
       <div class="col-3">
         <div class="form-group">
-          <label for="">Email</label>
-          <input type="text" name="" id="" class="form-control" placeholder="yassermasry69@gmail.com" aria-describedby="helpId">
-          <small id="helpId" class="text-muted">Help text</small>
+          <label class="form-label">Email</label>
+          <input type="text" name="" id="" class="form-control" placeholder="yassermasry69@gmail.com">
+
         </div>
       </div>
       <div class="col-3">
         <div class="form-group">
-          <label for="">Phone number</label>
+          <label class="form-label">Phone number</label>
           <input type="text" name="" id="" class="form-control" placeholder="+966333332" aria-describedby="helpId">
-          <small id="helpId" class="text-muted">Help text</small>
         </div>
       </div>
 
-      <button class="btn btn-success p-3">Change phone number</button>
-      <button class="btn btn-success p-3">Change Password</button>
-      <a href="">Verify number</a>
+      <div class="col-3 pt-4">
+        <div class="form-group  pt-2">
+          <!-- <input type="radio" class="px-3 "> -->
+          <a class="form-label px-1 " style="cursor: pointer;">Verify number</a>
+
+        </div>
+      </div>
+
+      <div class=" py-3">
+        <button class="btn text-success px-3 colorPassword">Change phone number</button>
+        <a class="btn text-success px-3 colorPassword mx-4" routerLink="/user/changePassword">Change Password</a>
+
+      </div>
+
+
     </div>
   </div>
 </div>

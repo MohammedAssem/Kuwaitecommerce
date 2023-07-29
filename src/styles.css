@@ -1,4 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+
+  margin: 0;
+  font-family: 'Inter', sans-serif !important;
+
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  font-family: 'Inter', sans-serif !important;
+
+}
+
+.text-success {
+  color: #539165 !important;
+}
+
+.bg-success {
+  background-color: #539165 !important;
+}
+
+.fawMedium {
+  font-weight: 500 !important;
+}
+
+.fawSemiBold {
+  font-weight: 600 !important;
+}
+
+.fawBold {
+  font-weight: bold;
+}
+.fsoRegular {
+  font-weight: 400;
+}
+
+.fos-16 {
+  font-size: 16px !important;
+}
+
+.fos-17 {
+  font-size: 17px !important;
+}
+
+.fos-18 {
+  font-size: 18px !important;
+}
+
+.fos-19 {
+  font-size: 19px !important;
+}
+
+.fos-20 {
+  font-size: 20px !important;
+}
+
+.fos-21 {
+  font-size: 21px !important;
+}
+.fos-24 {
+  font-size: 24 px !important;
+}
+.fos-15 {
+  font-size: 15px !important;
+}
+
+.fos-40 {
+  font-size: 40px !important;
+}
+
+.text-black{
+  color: #000000;
+}

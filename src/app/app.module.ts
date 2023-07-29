@@ -21,7 +21,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { DetailsProductComponent } from './interface/component/details-product/details-product.component';
 import { DeliveryComponent } from './interface/component/delivery/delivery.component'
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
-import {HttpClientModule}from '@angular/common/http'
+import {HttpClientModule}from '@angular/common/http';
+import { FilterCategoryPipe } from './pip/filter-category.pipe';
+import { FilterPricePipe } from './pip/filter-price.pipe';
+import { ContactusComponent } from './interface/component/contactus/contactus.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {HttpClientModule}from '@angular/common/http'
     OualityControlComponent,
     FooterComponent,
     DetailsProductComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    FilterCategoryPipe,
+    FilterPricePipe,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

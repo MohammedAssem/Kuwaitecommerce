@@ -1,60 +1,78 @@
 <div class="container">
-
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+        class="active     btnCarousl bg-success" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"
+        class="btnCarousl bg-success"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"
+        class="btnCarousl bg-success"></button>
+    </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../../../../assets/img/slid1.png" class="d-block w-100" alt="...">
+        <div class="row">
+          <div class="col-8">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis quibusdam distinctio unde cumque. A quidem
+              explicabo provident quasi praesentium eaque, amet cum, cumque minus aperiam vitae delectus maiores
+              assumenda blanditiis.</p>
+          </div>
+          <div class="col-4 bgCircle">
+            <img src="https://kuwaitec.com//media/products/3.jpeg" class="d-block w-100" alt="...">
+          </div>
+
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="../../../../assets/img/slid2.png" class="d-block w-100" alt="...">
+        <img src="../../../../assets/img/slid2.png" class="d-block w-100">
       </div>
       <div class="carousel-item">
-        <img src="../../../../assets/img/slid3.png" class="d-block w-100" alt="...">
+        <img src="../../../../assets/img/slid2.png" class="d-block w-100">
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
 </div>
 
 
-
-
-
 <div class="container">
-  <h1 class="mt-4">Categories</h1>
+  <h1 class="mt-4 fa-xl text-bold py-4">Categories</h1>
 
   <div class="row px-2">
-    <div class=" col-6     my-col-1    col-md-2  d-flex justify-content-center align-items-center  text-center ">
-      <div class="   w-100 ">
-        <img src="../../../../assets/img/ground2.png" class="mt-2 img-fluid">
-        <h2 class=" py-2 text-center">Improvers</h2>
+
+    <div class=" col-6 my-col-1 offset-1 col-md-2    text-center ">
+      <div class=" p-3  w-100 rounded-circle bgF6F6F6">
+        <img src="../../../../assets/img/Categories1.png" class="mt-2 img-fluid">
+        <h2 class=" py-2 text-center fawSemiBold fos-18">{{categories[0].name_en}}</h2>
       </div>
     </div>
-    <div class=" col-6 my-col-1 col-md-2 offset-md-1 text-center ">
-      <div class="   p-2 w-100   ">
-        <img src="../../../../assets/img/ground1.png" class="mt-2 img-fluid">
-        <h2 class="py-2 text-center ">Improvers</h2>
+    <div class=" col-6 my-col-1 offset-1 col-md-2     text-center ">
+      <div class="   p-3  w-100 rounded-circle bgF6F6F6 w-100   ">
+        <img src="../../../../assets/img/Categories2.png" class="mt-2 img-fluid">
+        <h2 class="py-2 text-center fawSemiBold fos-18 ">{{categories[1].name_en}}</h2>
 
       </div>
     </div>
-    <div class=" col-6 my-col-1  col-md-2  offset-md-1 text-center ">
-      <div class="   p-2 w-100   py-2">
-        <img src="../../../../assets/img/ground3.png" class="mt-2 img-fluid">
-        <h2 class="py-2 text-center ">Improvers</h2>
+    <div class=" col-6 my-col-1    col-md-2  offset-1    text-center ">
+      <div class="   p-3  w-100 rounded-circle bgF6F6F6 w-100   ">
+        <img src="../../../../assets/img/Categories3.png" class="mt-2 img-fluid">
+        <h2 class="py-2 text-center fawSemiBold fos-16 ">{{categories[2].name_en}}</h2>
 
       </div>
     </div>
-    <div class=" col-6 my-col-1 col-md-2  offset-md-1 text-center ">
-      <div class="   p-2 w-100   py-2">
-        <img src="../../../../assets/img/ground4.png" class="mt-2 img-fluid">
-        <h2 class="py-2 text-center ">Improvers</h2>
+    <div class=" col-6 my-col-1 offset-1 col-md-2    text-center ">
+      <div class="   p-3  w-100 rounded-circle bgF6F6F6 w-100   ">
+        <img src="../../../../assets/img/Categories4.png" class="mt-2 img-fluid">
+        <h2 class="py-2 text-center fawSemiBold fos-19 ">{{categories[3].name_en}} <br></h2>
 
       </div>
     </div>
@@ -65,31 +83,49 @@
 
 <div class="container">
 
-  <h1 class="py-3">Recent Products</h1>
+  <h1 class="py-4 fa-xl text-bold ">Recent Products</h1>
   <owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let slide of AllData">
+    <ng-container *ngFor="let slide of recent_products">
       <ng-template carouselSlide [id]="slide.userId">
         <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
+          <img [src]="pathImage+slide.main_image" class="card-img-top" style="height: 32vh;">
           <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success   fa fa-star"></i>
-                    <i class="text-success   fa fa-star"></i>
-                    <i class="text-success   fa fa-star"></i>
-                    <i class="text-muted  fa fa-star"></i>
-                    <i class="text-muted  fa fa-star"></i>
-                    (3.0)
-                </li>
+            <h5 class="card-title">{{slide.name_en}}</h5>
+            <ul class="list-unstyled  mb-1">
+              <li>
+
+                <ng-container *ngIf="slide.rate!=null">
+                  <ng-container *ngFor="let itemNUm of ArrayRetetNum;let i=index">
+
+                    <ng-container *ngIf="i<slide.rate">
+                      <i class="text-success   fa fa-star"></i>
+                    </ng-container>
+
+                    <ng-container *ngIf="i>slide.rate">
+                      <i class="fa-regular text-success fa-star"></i>
+                    </ng-container>
+
+                  </ng-container>
+
+
+                  <!-- <i class="text-success  fa fa-star"></i>
+                <i class="text-success  fa fa-star"></i>
+                <i class="text-success  fa fa-star"></i>
+                <i class="text-muted fa fa-star"></i>
+                <i class="text-muted fa fa-star"></i> -->
+                  (3.0{{slide.rate}})
+                </ng-container>
+              </li>
             </ul>
             <br>
 
 
             <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-
-              <a (click)="AddToCart(slide)" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
+              <p class="card-text py-1 "><span class="text-success fas-20 fawBold">{{slide.price}} KD</span> <span
+                  class="line px-2" *ngIf="slide.price_before_sale!=null">{{slide.price_before_sale }} KD</span>
+              </p>
+              <a (click)="AddToCart(slide)" class="btn text-success backgroundBtn"> <i
+                  class="fa-solid fa-cart-shopping"></i> Add </a>
             </div>
           </div>
         </div>
@@ -101,192 +137,85 @@
 
 
 <div class="container">
-  <h1 class="py-3">Our Products</h1>
+  <h1 class="py-3 fa-xl text-bold">Our Products</h1>
   <div class="row">
     <div class="row py-3">
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-            <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a   href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
 
+      <ng-container *ngFor="let item of AllProdicts; let i=index">
+
+        <div class="col-md-6 col-lg-4 col-xl-3 " *ngIf="i<indexViewProducts">
+          <div class="card borderAdBoxShadow mx-2 my-3">
+            <img [src]="pathImage+item.main_image" class="card-img-top" style="height: 32vh;">
+            <div class="card-body">
+              <h5 class="card-title NameCardEn">{{item.name_en}}</h5>
               <ul class="list-unstyled  mb-1">
                 <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
+
+                  <ng-container *ngIf="item.rate!=null">
+                    <ng-container *ngFor="let itemNUm of ArrayRetetNum;let i=index">
+
+                      <ng-container *ngIf="i<item.rate">
+                        <i class="text-success   fa fa-star"></i>
+                      </ng-container>
+
+                      <ng-container *ngIf="i>item.rate">
+                        <i class="fa-regular text-success fa-star"></i>
+                      </ng-container>
+
+                    </ng-container>
+
+
+                    <!-- <i class="text-success  fa fa-star"></i>
+                  <i class="text-success  fa fa-star"></i>
+                  <i class="text-success  fa fa-star"></i>
+                  <i class="text-muted fa fa-star"></i>
+                  <i class="text-muted fa fa-star"></i> -->
+                    (3.0{{item.rate}})
+                  </ng-container>
                 </li>
               </ul>
               <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
+                <p class="card-text py-1 "><span class="text-success fas-20 fawBold">{{item.price}} KD</span> <span
+                    class="line px-2" *ngIf="item.price_before_sale!=null">{{item.price_before_sale }} KD</span>
+                </p>
 
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-              <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
+                <a (click)="AddToCart(item)" class="btn text-success backgroundBtn"> <i
+                    class="fa-solid fa-cart-shopping"></i> Add </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
+      </ng-container>
 
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-              <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
 
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-              <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
 
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-              <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
+    </div>
+  </div>
+</div>
 
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-              <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 ">
-        <div class="card borderAdBoxShadow mx-2 my-3">
-          <img src="../../../../assets/img/Untitled.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Hummer F1 Red Sweet Pepper Holland 1000s</h5>
+<div class="container">
+  <div class="row">
+    <div class=" col-12 col-md-4 my-2 mx-auto">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" style="cursor: pointer;" (click)="PrivIndexMethod()">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <ng-container *ngFor="let item of ArrayNextNum;let i=index">
+            <li class="page-item"><a class="page-link" (click)="addviewProducts(item)"
+                *ngIf="i>=privIndex&&i<=(nextIndex)">{{item}}</a></li>
 
-              <ul class="list-unstyled  mb-1">
-                <li>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-success  fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    (3.0)
-                </li>
-            </ul>
-              <div class="d-flex justify-content-between  ">
-              <p class="card-text py-1 ">14.6 KD <span class="line px-2">25.6 KD</span> </p>
-              <a href="#" class="btn text-success backgroundBtn"> <i class="fa-solid fa-cart-shopping"></i> Add </a>
-            </div>
-          </div>
-        </div>
-      </div>
+          </ng-container>
+
+          <li class="page-item">
+            <a class="page-link" style="cursor: pointer;" (click)="NextIndexMethod()">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

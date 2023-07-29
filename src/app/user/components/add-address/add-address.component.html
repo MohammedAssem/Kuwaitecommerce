@@ -1,92 +1,76 @@
 
 <div class="pairt">
-  <div class="row   py-5 w-100">
-    <div class="col-12 col-md-6 m-auto   bg-light rounded">
-      <div class="px-3 pt-3">
+  <div class="row   py-md-5 w-100 mx-0 ">
+    <div class="col-12 col-md-6 m-auto    bg-light rounded">
+      <div class="px-3 pt-4 col-mt-5">
         <h1>Add new Address</h1>
       </div>
-
       <div class="row">
-        <div class="col-12 col-md-6 mx-auto">
+        <div class="col-8 col-h-100 col-md-10 col-lg-6 mx-auto ">
           <div class="">
 
             <form [formGroup]="AddNewAddress" (ngSubmit)="AddNewAddressMethod()">
-              <div class="form-group py-2 mt-4">
-
-                <input placeholder="Enter your   name" class="form-control" type="text" formControlName="Name">
-                <div class="" role="alert"
-                  *ngIf="AddNewAddress.get('Name')?.errors &&AddNewAddress.get('Name')?.touched">
-                  <p class="alert alert-danger " *ngIf="AddNewAddress.get('Name')?.getError('required') "> plese
-                    enter
-                    Name </p>
+              <div class="form-group py-2">
+                <input placeholder="Enter your   name" class="form-control" type="text" formControlName="name">
+                <div class="py-1" role="alert"
+                  *ngIf="AddNewAddress.get('name')?.errors &&AddNewAddress.get('name')?.touched">
+                  <p class="alert alert-danger py-0 " *ngIf="AddNewAddress.get('name')?.getError('required') ">
+                    plese
+                    enter Name </p>
                 </div>
               </div>
-              <div class="form-group py-2">
-                <input class="form-control mt-2" placeholder="enter your Phone Number" type="text"
-                  formControlName="phone">
-                <div class="" role="alert"
-                  *ngIf="AddNewAddress.get('phone')?.errors &&AddNewAddress.get('phone')?.touched">
-                  <p class="alert alert-danger " *ngIf="AddNewAddress.get('phone')?.getError('required') ">
+              <div class="form-group py-1">
+                <input class="form-control  " placeholder="enter your Phone Number" type="text"
+                  formControlName="phone_number">
+                <div class="py-1" role="alert"
+                  *ngIf="AddNewAddress.get('phone_number')?.errors &&AddNewAddress.get('phone_number')?.touched">
+                  <p class="alert alert-danger py-0 m-0"
+                    *ngIf="AddNewAddress.get('phone_number')?.getError('required') ">
                     plese enter Phone
                     Number</p>
-                  <p class="alert alert-danger " *ngIf="AddNewAddress.get('phone')?.getError('pattern') "> plese
-                    Edit Phone
-                    Number </p>
                 </div>
               </div>
-              <div class="form-group py-2">
-                <input class="form-control mt-2" placeholder="Enter your StreetNumber" type="text"
-                  formControlName="StreetNumber">
+              <div class="form-group pt-2">
+                <input class="form-control  " placeholder="Enter your area  " type="text"
+                  formControlName="area_name">
                 <div class="  " role="alert"
-                  *ngIf="AddNewAddress.get('StreetNumber')?.errors &&AddNewAddress.get('StreetNumber')?.touched">
-                  <p class="alert alert-danger " *ngIf="AddNewAddress.get('StreetNumber')?.getError('StreetNumber') ">
+                  *ngIf="AddNewAddress.get('area_name')?.errors &&AddNewAddress.get('area_name')?.touched">
+                  <p class="alert alert-danger " *ngIf="AddNewAddress.get('area_name')?.getError('area_name') ">
                     plese enter
-                    StreetNumber
+                    area name
                   </p>
                 </div>
               </div>
-              <input class="form-control mt-2 " type="text" placeholder="enter your BlockNumber"
-                formControlName="BlockNumber">
-              <div class="" role="alert"
-                *ngIf="AddNewAddress.get('BlockNumber')?.errors &&AddNewAddress.get('BlockNumber')?.touched">
-                <p class="alert alert-danger " *ngIf="AddNewAddress.get('BlockNumber')?.getError('required') ">
-                  plese enter
-                  BlockNumber
-                </p>
-                <p class="alert alert-danger " *ngIf="AddNewAddress.get('BlockNumber')?.getError('pattern') ">
-                  plese Edit
-                  BlockNumber
-                </p>
+              <div class="form-group pt-2">
+                <input class="form-control  " placeholder="Enter your Street " type="text"
+                  formControlName="street_name">
+                <div class="  " role="alert"
+                  *ngIf="AddNewAddress.get('street_name')?.errors &&AddNewAddress.get('street_name')?.touched">
+                  <p class="alert alert-danger "
+                    *ngIf="AddNewAddress.get('street_name')?.getError('street_name') "> plese enter
+                    Street
+                  </p>
+                </div>
               </div>
-              <input class="form-control mt-2 " type="text" placeholder="enter your VillaHouseNumber"
-                formControlName="VillaHouseNumber">
-              <div class="" role="alert"
-                *ngIf="AddNewAddress.get('VillaHouseNumber')?.errors &&AddNewAddress.get('VillaHouseNumber')?.touched">
-                <p class="alert alert-danger " *ngIf="AddNewAddress.get('VillaHouseNumber')?.getError('required') ">
-                  plese enter
-                  VillaHouseNumber
-                </p>
-                <p class="alert alert-danger " *ngIf="AddNewAddress.get('VillaHouseNumber')?.getError('pattern') ">
-                  plese Edit
-                  VillaHouseNumber
-                </p>
-              </div>
+              <input class="form-control mt-2 " type="text" placeholder="enter your Block "
+                formControlName="block">
 
+              <input class="form-control mt-2 " type="text" placeholder="enter your additional_instructions"
+                formControlName="additional_instructions">
 
-              <p class="py-3">Please select your AddressType:</p>
-              <input type="radio" formControlName="AddressType" value="Home">
+              <p class=" py-1 pt-2">Please select your AddressType:</p>
+              <input type="radio" formControlName="address_type" value="1">
               <label class="mx-2"> Home</label>
-              <input type="radio" formControlName="AddressType" value="Farm">
+              <input type="radio" formControlName="address_type" value="2">
               <label class="mx-2"> Farm</label>
-              <input type="radio" formControlName="AddressType" value="Other">
+              <input type="radio" formControlName="address_type" value="3">
               <label>Other </label><br><br>
 
               <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" formControlName="defaultAddresse">
+                <input type="checkbox" class="form-check-input" formControlName="default">
                 <label class="form-check-label" for="exampleCheck1">Use as default address</label>
               </div>
-              <button class="btn btn-success my-2" type="submit" [disabled]="AddNewAddress.invalid">Sign
-                up</button>
+              <button class="btn btn-success my-2 mb-5" type="submit" [disabled]="AddNewAddress.invalid">Add Address</button>
             </form>
           </div>
         </div>

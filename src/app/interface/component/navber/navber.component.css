@@ -13,12 +13,18 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
+  color: #858585;
 }
 .form-group i{
   top:58%
 }
 .inputSearch{
-  width:40%;
+  width:42%;
+
+}
+.inputSearch input{
+  background-color: #f5f5f5;
+  color: #858585;
 }
 *{
   font-family: Inter  ;
@@ -105,7 +111,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1300px) {
   .inputSearch{
-    width:40%;
+    width:42%;
     margin: auto;
   }
 }
@@ -124,4 +130,13 @@ a{text-decoration:none;cursor: pointer ;}
 .dropdown-menu{
   --bs-dropdown-min-width: 55px !important;
 }
+
+.pl-2{
+  padding-left: 15px;
+}
+
+.dropdown-toggle::after{
+  display: none;
+}
+
 

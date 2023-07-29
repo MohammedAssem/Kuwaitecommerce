@@ -1,4 +1,7 @@
 .pairt{
-  height: 110vh;
+  height: 92vh;
   background-color: rgba(0, 0, 0, .3);
+}
+a{
+  cursor: pointer;
 }

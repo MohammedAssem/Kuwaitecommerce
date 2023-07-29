@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <iframe class="w-100 " style="height: 30vh;"
+        src="https://www.google.com/maps/d/embed?mid=1mPdehqN2_oRQc-2xoUgXu9UnVX8&hl=en_US&ehbc=2E312F"></iframe>
+    </div>
+
+    <div class=" mt-5 pb-3 text-center">
+      <h3 class="fa-xl text-bold">Contact us</h3>
+      <p class="py-1">Our friendly team would love to hear from you </p>
+    </div>
+    <div class="col-12 col-md-10 col-lg-5 mx-auto">
+      <form (ngSubmit)="cuntactusMethod()" [formGroup]="cuntactus" class="mb-5">
+        <div class="form-group py-2">
+          <input id="my-input" class="form-control bg-light" placeholder=" name" type="text" formControlName="name">
+        </div>
+
+        <div class="form-group py-2">
+          <div class="row">
+            <div class="col-1 pt-1 ">
+              <li ngbDropdown class="nav-item mx-1 dropdown country">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdownBasic1">
+                  <img [src]="countryImg" alt="">
+                </a>
+                <ul class="dropdown-menu " ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                  style=" transform:translate3d(0px, 0px, 0px)!important">
+                  <li><a (click)="country_code('+965','../../../../assets/img/kuwait (1).png')" ngbDropdownItem> <img
+                        src="../../../../assets/img/kuwait (1).png"></a></li>
+                  <li><a (click)="country_code('+966','../../../../assets/img/saudi-arabia.png')" ngbDropdownItem><img
+                        src="../../../../assets/img/saudi-arabia.png" alt=""></a></li>
+                </ul>
+              </li>
+
+            </div>
+
+            <div class="col-11 ">
+              <div class="pl-2">
+                <input id="my-input" class="form-control bg-light" type="text" placeholder="Phone Number"
+                  formControlName="phone_number">
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group py-2">
+          <input id="my-input" class="form-control bg-light" type="email" placeholder="Email address"
+            formControlName="email">
+        </div>
+        <div class="form-group py-2">
+          <textarea id="my-input" class="form-control bg-light" type="text" placeholder="Leave us a Message..." rows="3"
+            cols="4" formControlName="message"></textarea>
+        </div>
+        <select class="form-select  " formControlName="request_type" placeholder="Open this select menu">
+          <option value="1" selected>contact us</option>
+          <option value="3">service</option>
+        </select>
+        <div class="py-2 text-center">
+          <button class="btn btn-success px-4" [disabled]="cuntactus.invalid"> Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+</div>
+<div class="container-lg">
+  <div class="row pb-4 px-md-5 my-3">
+
+    <div class="col-11 col-md-4 py-3">
+      <div class="px-2 px-lg-5  py-4 bg-light">
+        <button class="btn btn-success p-2 px-3 my-4">
+          <i class="fa-solid fa-phone fa-lg"></i>
+        </button>
+        <h3 class="fa-xl text-bold py-lg-2 pt-3">Call us</h3>
+        <p class="form-label py-1">Sun - Thu from 9 am to 5 pm</p>
+        <a href="+(966)2485821" class="text-success">+ (966)2485821</a>
+      </div>
+    </div>
+    <div class="col-11 col-md-4 py-3">
+      <div class="px-2 px-lg-5  py-4  bg-light">
+        <button class="btn btn-success p-2 px-3 my-3">
+          <i class="fa-solid fa-location-dot fa-lg"></i>
+        </button>
+        <h3 class="fa-xl text-bold py-lg-2 pt-3">Visit us</h3>
+        <p class="form-label py-1">Visit our office HQ</p>
+        <a href="# R27 2nd floor, Salem Al Mubarak St
+        Salmiya, Kuwait" class="text-success"># R27 2nd floor, Salem Al Mubarak St
+          Salmiya, Kuwait</a>
+      </div>
+    </div>
+    <div class="col-11 col-md-4 py-3">
+      <div class=" px-2 px-lg-5   py-4  bg-light">
+        <button class="btn btn-success p-2 px-3 my-4">
+          <i class="fa-solid fa-id-badge"></i>
+        </button>
+        <h3 class="fa-xl text-bold py-lg-2 pt-3">Contact Seller</h3>
+        <p class="form-label py-1">Reach our sellers</p>
+        <a href="+ (966)3210011" class="text-success">+ (966)3210011</a>
+      </div>
+    </div>
+  </div>
+</div>

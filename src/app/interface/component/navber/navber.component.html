@@ -19,18 +19,20 @@
       <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left:auto ;">
 
         <li ngbDropdown class="nav-item mx-1 dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdownBasic1">
-            Categories
+          <a ngbDropdownToggle class="nav-link dropdown-toggle  fsoRegular fos-16 text-black" id="dropdownBasic1">
+            Categories <i class="fa-solid fa-chevron-down mx-1"></i>
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <li><a ngbDropdownItem>Action</a></li>
-            <li><a ngbDropdownItem>Another action</a></li>
-            <li><a ngbDropdownItem>Something else here</a></li>
+            <ng-container *ngFor="let item of Catogres">
+              <li><a [routerLink]="['/categories',item.id]" ngbDropdownItem>{{item.name_en
+                  }}</a></li>
+            </ng-container>
+
           </ul>
         </li>
         <li ngbDropdown class="nav-item mx-1 dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdownBasic1">
-            Services
+          <a ngbDropdownToggle class="nav-link dropdown-toggle fsoRegular fos-16 text-black" id="dropdownBasic1">
+            Services <i class="fa-solid fa-chevron-down mx-1"></i>
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <li><a ngbDropdownItem>Action</a></li>
@@ -39,12 +41,12 @@
           </ul>
         </li>
         <li class="nav-item mx-1">
-          <a class="nav-link active  " aria-current="page" href="#"> Cart <i
-              class="fa-solid fa-cart-shopping fa-beat"></i>
+          <a class="nav-link active  fsoRegular fos-16 text-black  " aria-current="page" href="#"> Cart <i
+              class="fa-solid fa-cart-plus fa-beat mx-1"></i>
           </a>
         </li>
         <li ngbDropdown class="nav-item mx-1  ">
-          <a class="nav-link active  " aria-current="page" (click)="ViewRegstrainAndLogin()">
+          <a class="nav-link active  fsoRegular fos-16 text-black  " aria-current="page" (click)="ViewRegstrainAndLogin()">
             Account
           </a>
         </li>
@@ -53,164 +55,213 @@
     </div>
   </div>
 
-
-
-
 </nav>
-<div *ngIf="RegstrainAndLogin"
-  class="container position-absolute Regstration-form   px-4  py-2 bg-light  border border-dark border-1 rounded"
-  style="z-index: 2222;;">
-  <!--  start login -->
-  <form action="" *ngIf="Divlogin" class="py-3" [formGroup]="signIn" (ngSubmit)="signInMethod()">
-    <h3 class="fa-xl   py-4">{{textlogin}}</h3>
-    <div class="form-group my-3">
-      <input id="my-input" class="form-control py-2" formControlName="phone" type="text"
-        placeholder="please enter your email or phone">
-      <i class="fa-regular fa-user fa-lg  "></i>
-    </div>
-    <button class="btn btn-success my-3 w-100" (click)="viewdisplayPassword()" [ngStyle]="{'display': displayStyleBtn}"
-      type="button">Login</button>
-    <div class="displayPassword" [ngStyle]="{'display': displayStyle}">
-      <div class="form-group  ">
-        <input id="my-input" class="form-control py-2" [type]="password" formControlName="password"
-          placeholder="please enter your password">
-        <i class="fa-solid fa-lock fa-lg"></i>
-        <i class="fa-solid fa-eye fa-lg" (click)="ChangTypPassword()"
-          style="cursor: pointer;left:91% ; transform: translateY(-50%);"></i>
-      </div>
-      <p class="form-label mt-3">
-        <a (click)="viewForgetPassword()">Forget Password ?</a>
-      </p>
-      <p class="form-label mt-3 text-danger" *ngIf="MassageErrorPassword">
-         {{MassageErrorPassword}}
-      </p>
-      <button class="btn btn-success my-3 w-100" type="submit" [disabled]="signIn.invalid">Login</button>
-    </div>
-    <h3 class="fa-lg text-center pt-3">Don't have an account ? </h3>
-    <p class="text-center">
-      <a (click)="trueLogin()" class="x" style="text-decoration:underline;">Create an account in less then 1
-        minute</a>
-    </p>
 
-  </form>
-  <!-- End Login -->
 
-  <div>
-    <!-- Strart Register -->
-    <form  [formGroup]="signUp" (ngSubmit)="SignUpMethod()" *ngIf="emailAndPassword" class="py-3">
+
+<div *ngIf="RegstrainAndLogin" class=""
+  style="position: fixed; width: 100%;height: 100vh;background-color: rgba(0, 0, 0, .7);z-index: 888;">
+  <div
+    class="container position-absolute Regstration-form  mx-md-4 px-4  py-2 bg-light  border border-dark border-1 rounded"
+    style="z-index: 2222;;">
+    <!--  start login -->
+    <form action="" *ngIf="Divlogin" class="py-3" [formGroup]="signIn" (ngSubmit)="signInMethod()">
       <h3 class="fa-xl   py-4">{{textlogin}}</h3>
       <div class="form-group my-3">
-        <input id="my-input" class="form-control py-2" type="email" formControlName="email"  placeholder="please enter your email or phone">
-        <i class="fa-solid fa-envelope fa-lg  "></i>
+        <input id="my-input" class="form-control py-2" formControlName="phone" type="text"
+          placeholder="please enter your email or phone">
+        <i class="fa-regular fa-user fa-lg  "></i>
       </div>
-      <div class="form-group my-3">
-        <input id="my-input" class="form-control py-2" [type]="password" formControlName="password" placeholder="please enter your password">
-        <i class="fa-solid fa-lock fa-lg"></i>
-        <i class="fa-solid fa-eye fa-lg" (click)="ChangTypPassword()"
-          style="cursor: pointer;left:91% ; transform: translateY(-50%);"></i>
-      </div>
-
-      <div class="form-group my-3">
-        <div class="row">
-          <div class="col-2">
-            <li ngbDropdown class="nav-item mx-1 dropdown country">
-              <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdownBasic1">
-                <img src="../../../../assets/img/kuwait (1).png" alt="">
-              </a>
-              <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1"
-                style=" transform:translate3d(0px, 0px, 0px)!important">
-                <li><a ngbDropdownItem> <img src="../../../../assets/img/kuwait (1).png" (click)="country_code('20')" ></a></li>
-                <li><a ngbDropdownItem><img src="../../../../assets/img/saudi-arabia.png" alt=""></a></li>
-              </ul>
-            </li>
-
-          </div>
-          <div class="col-9 mx-auto px-0 ">
-            <input id="my-input" class="form-control py-2 px-1" type="text" formControlName="phone_number" placeholder="please enter your  phone">
-
-          </div>
+      <button class="btn btn-success my-3 w-100" [disabled]="!signIn.get('phone')?.value"
+        (click)="viewdisplayPassword()" [ngStyle]="{'display': displayStyleBtn}" type="button">Login</button>
+      <div class="displayPassword" [ngStyle]="{'display': displayStyle}">
+        <div class="form-group  ">
+          <input id="my-input" class="form-control py-2" [type]="password" formControlName="password"
+            placeholder="please enter your password">
+          <i class="fa-solid fa-lock fa-lg"></i>
+          <i class="fa-solid fa-eye fa-lg" (click)="ChangTypPassword()"
+            style="cursor: pointer;left:91% ; transform: translateY(-50%);"></i>
         </div>
+        <p class="form-label mt-3">
+          <a (click)="viewForgetPassword()">Forget Password ?</a>
+        </p>
+        <p class="form-label mt-3 text-danger" *ngIf="MassageErrorPassword">
+          {{MassageErrorPassword}}
+        </p>
+        <button class="btn btn-success my-3 w-100" type="submit" [disabled]="signIn.invalid">Login</button>
       </div>
-
-
-      <button class="btn btn-success my-3 w-100" >Sign up</button>
-
+      <h3 class="fa-lg text-center pt-3">Don't have an account ? </h3>
       <p class="text-center">
-        <a (click)="trueRegstraion()" class="text-dark ">Login</a>
+        <a (click)="trueLogin()" class="x" style="text-decoration:underline;">Create an account in less then 1
+          minute</a>
       </p>
 
     </form>
+    <!-- End Login -->
 
-    <form action="" *ngIf="emailAndcode" class="py-3" (ngSubmit)="SignUp_Code_Method()">
-      <div class="pt-3">
-        <a (click)="backemailAndPassword()" class="py-2 mt-3">back</a>
+    <div>
+      <!-- Strart Register -->
+      <form [formGroup]="signUp" (ngSubmit)="SignUpMethod()" *ngIf="emailAndPassword" class="py-3">
+        <h3 class="fa-xl   py-4">{{textlogin}}</h3>
+        <div class="form-group my-3">
+          <input id="my-input" class="form-control py-2" type="email" formControlName="email"
+            placeholder="please enter your email or phone">
+          <i class="fa-solid fa-envelope fa-lg  "></i>
+        </div>
+        <div class="form-group my-3">
+          <input id="my-input" class="form-control py-2" [type]="password" formControlName="password"
+            placeholder="please enter your password">
+          <i class="fa-solid fa-lock fa-lg"></i>
+          <i class="fa-solid fa-eye fa-lg" (click)="ChangTypPassword()"
+            style="cursor: pointer;left:91% ; transform: translateY(-50%);"></i>
+        </div>
+
+        <!-- <div class="form-group my-3">
+          <div class="row">
+            <div class="col-2 pt-1">
+              <li ngbDropdown class="nav-item mx-1 dropdown country">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdownBasic1">
+                  <img [src]="countryImg" alt="">
+                </a>
+                <ul class="dropdown-menu py-0" ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                  style=" transform:translate3d(0px, 0px, 0px)!important">
+                  <li><a (click)="country_code('+965','../../../../assets/img/kuwait (1).png')" ngbDropdownItem> <img
+                        src="../../../../assets/img/kuwait (1).png" class="px-1"> +965</a> </li>
+                  <hr class="my-0">
+                  <li><a (click)="country_code('+966','../../../../assets/img/saudi-arabia.png')" ngbDropdownItem><img
+                        src="../../../../assets/img/saudi-arabia.png" class="px-1">+966</a></li>
+                </ul>
+              </li>
+
+            </div>
+            <div class="col-9 mx-auto px-0 ">
+              <input id="my-input" class="form-control py-2 px-1" type="text" formControlName="phone_number"
+                placeholder="please enter your  phone">
+
+            </div>
+          </div>
+        </div> -->
+
+
+        <div class="form-group my-3" style="position: relative;">
+            <div class="col-2 pt-1" style="position: absolute;top: 0;left: 2%;">
+              <li ngbDropdown class="nav-item mx-1 dropdown country">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdownBasic1">
+                  <img [src]="countryImg" alt="">
+                </a>
+                <ul class="dropdown-menu py-0" ngbDropdownMenu aria-labelledby="dropdownBasic1"
+                  style=" transform:translate3d(0px, 0px, 0px)!important">
+                  <li><a (click)="country_code('+965','../../../../assets/img/kuwait (1).png')" ngbDropdownItem> <img
+                        src="../../../../assets/img/kuwait (1).png" class="px-1"> +965</a> </li>
+                  <hr class="my-0">
+                  <li><a (click)="country_code('+966','../../../../assets/img/saudi-arabia.png')" ngbDropdownItem><img
+                        src="../../../../assets/img/saudi-arabia.png" class="px-1">+966</a></li>
+                </ul>
+              </li>
+
+            </div>
+            <div class="col-12 mx-auto px-0 ">
+              <input id="my-input" class="form-control py-2 px-1 ps-5" type="text" formControlName="phone_number"
+                placeholder="please enter your  phone">
+
+            </div>
+          </div>
+
+
+        <button class="btn btn-success my-3 w-100" [disabled]="signUp.invalid">Sign up</button>
+
+        <p class="text-center">
+          <a (click)="trueRegstraion()" class="text-dark ">Login</a>
+        </p>
+
+      </form>
+
+      <div *ngIf="emailAndcode" class="py-3">
+        <div class="pt-3">
+          <a (click)="backemailAndPassword()" class="py-2 mt-3">back</a>
+        </div>
+        <div class="form-group py-2">
+          <input id="my-input" class="form-control " [(ngModel)]="Useremail" [placeholder]="Useremail" type="email"
+            disabled>
+          <i class="fa-regular fa-user fa-lg  "></i>
+        </div>
+        <div class="form-group">
+          <input id="my-input" class="form-control " type="text" placeholder="insert code" [(ngModel)]="UserCode">
+          <i class="fa-solid fa-stopwatch-20 fa-lg"></i>
+          <p class="form-label">We've sent you a code via email Please type it above Didn't get it? <a
+              (click)="returnOtpCode()">Resend</a> </p>
+        </div>
+        <button class="btn btn-success my-3 w-100 py-2" type="submit" (click)="SignUp_Code_Method()">Verify</button>
       </div>
-      <div class="form-group py-2">
-        <input id="my-input" class="form-control " type="email"  disabled [(ngModel)]="Useremail">
-        <i class="fa-regular fa-user fa-lg  "></i>
-      </div>
-      <div class="form-group">
-        <input id="my-input" class="form-control " type="text"  placeholder="insert code" [(ngModel)]="UserCode">
-        <i class="fa-solid fa-stopwatch-20 fa-lg"></i>
-      </div>
-      <button class="btn btn-success my-3 w-100 py-2">Verify</button>
-    </form>
+
+
+
+      <form [formGroup]="complete_register" (ngSubmit)="complete_registerMethod()" *ngIf="emailAndname" class="py-3">
+
+        <div class="pt-3">
+          <a (click)="backemailAndCode()" class="py-2 mt-3">back</a>
+        </div>
+        <h3 class="fa-2x py-3 text-center "><i class="fa-regular fa-circle-check text-success "></i> Welcome</h3>
+        <p class="pb-1">Your account is active and you are logged in. You can enrich your profile if you'd like to.</p>
+
+        <div class="form-group py-2">
+          <input id="my-input" class="form-control py-2" type="text" placeholder="First Name"
+            formControlName="first_name">
+          <i class="fa-regular fa-user fa-lg  "></i>
+        </div>
+        <div class="form-group">
+          <input id="my-input" class="form-control py-2" type="text" placeholder="Last Name"
+            formControlName="last_name">
+          <i class="fa-regular fa-user fa-lg  "></i>
+        </div>
+        <div class="form-group py-2">
+          <input id="my-input" class="form-control py-2" type="email" [placeholder]="Useremail">
+          <i class="fa-regular fa-user fa-lg  "></i>
+        </div>
+
+        <button class="btn btn-success my-3 w-100" [disabled]="complete_register.invalid">Save date</button>
+      </form>
+
+    </div>
+
     <!-- end Register -->
 
-
     <!-- Strart Forget  password  -->
-    <form [formGroup]="complete_register" (ngSubmit)="complete_registerMethod()" *ngIf="emailAndname" class="py-3" >
+    <div class="" *ngIf="ForgetPassword" class="py-3">
+      <div *ngIf="DivForgetPassword">
+        <a class="py-3  mt-3" (click)="trueRegstraion()">back</a>
+        <h3 class="fa-lg py-3">password recovery</h3>
+        <div class="form-group">
+          <input id="my-input" class="form-control py-2" type="email" [(ngModel)]="emailForgetPassword"
+            placeholder="please enter your email or phone">
+          <i class="fa-regular fa-user fa-lg  "></i>
+        </div>
+        <button class="btn btn-success my-3 w-100 my-3" type="button"
+          (click)="EmailForGetPasswordMetode()">Continue</button>
 
-      <div class="pt-3">
-        <a (click)="backemailAndCode()" class="py-2 mt-3">back</a>
       </div>
-      <h3 class="fa-2x py-3 text-center "><i class="fa-regular fa-circle-check text-success "></i> Welcome</h3>
-      <p class="pb-1">Your account is active and you are logged in. You can enrich your profile if you'd like to.</p>
+      <div class="" *ngIf="!DivForgetPassword">
+        <a (click)="backForgetpassword()" class="py-2 mt-3">back</a>
+        <div class="form-group mt-2">
+          <input id="my-input" class="form-control py-2" type="text" [(ngModel)]="UserCode" placeholder="insert code">
+          <i class="fa-solid fa-stopwatch-20 fa-lg"></i>
+        </div>
+        <form [formGroup]="forgetPassword" (ngSubmit)="ChangePasswordMethod()">
 
-      <div class="form-group py-2">
-        <input id="my-input" class="form-control py-2" type="text" placeholder="First Name ">
-        <i class="fa-regular fa-user fa-lg  "></i>
-      </div>
-      <div class="form-group">
-        <input id="my-input" class="form-control py-2" type="text" placeholder="Last Name  ">
-        <i class="fa-regular fa-user fa-lg  "></i>
-      </div>
-      <div class="form-group py-2">
-        <input id="my-input" class="form-control py-2" type="email" placeholder=" email  ">
-        <i class="fa-regular fa-user fa-lg  "></i>
+          <div class="form-group my-2">
+            <input id="my-input" class="form-control py-2" formControlName="password" [type]="password"
+              placeholder="please enter your password">
+            <i class="fa-solid fa-lock fa-lg"></i>
+            <i class="fa-solid fa-eye fa-lg" (click)="ChangTypPassword()"
+              style="cursor: pointer;left:91% ; transform: translateY(-50%);"></i>
+          </div>
+          <button class="btn btn-success my-3 w-100" type="submit">Confirm New password</button>
+
+        </form>
       </div>
 
-      <button class="btn btn-success my-3 w-100">Save date</button>
-    </form>
+
+    </div>
+    <!-- End Forget  password  -->
   </div>
-  <div class="" *ngIf="ForgetPassword" class="py-3" (ngSubmit)="EmailForGetPassword">
-    <a class="py-3  mt-3" (click)="trueRegstraion()">back</a>
-    <h3 class="fa-lg py-3">password recovery</h3>
-    <form action="" *ngIf="DivForgetPassword" >
-      <div class="form-group">
-        <input id="my-input" class="form-control py-2" type="email" [(ngModel)]="emailForgetPassword" placeholder="please enter your email or phone">
-        <i class="fa-regular fa-user fa-lg  "></i>
-      </div>
-      <button class="btn btn-success my-3 w-100 my-3" type="button">Continue</button>
-
-    </form>
-
-
-    <form [formGroup]="forgetPassword" (ngSubmit)="ChangePasswordMethod()"   *ngIf="!DivForgetPassword">
-      <a (click)="backForgetpassword()" class="py-2 mt-3">back</a>
-      <div class="form-group">
-        <input id="my-input" class="form-control py-2" type="text" [(ngModel)]="UserCode" placeholder="insert code">
-        <i class="fa-solid fa-stopwatch-20 fa-lg"></i>
-      </div>
-      <div class="form-group">
-        <input id="my-input" class="form-control py-2" formControlName="password" [type]="password" placeholder="please enter your password">
-        <i class="fa-solid fa-lock fa-lg"></i>
-        <i class="fa-solid fa-eye fa-lg" (click)="ChangTypPassword()"
-          style="cursor: pointer;left:91% ; transform: translateY(-50%);"></i>
-      </div>
-      <button class="btn btn-success my-3 w-100" type="submit">Confirm New password</button>
-
-    </form>
-  </div>
-  <!-- End Forget  password  -->
 </div>
