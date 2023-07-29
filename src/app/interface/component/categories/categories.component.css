@@ -2,8 +2,7 @@
 
 .borderAdBoxShadow{
   border: 0;
-  box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px   6px
-}
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;}
 
 .borderAdBoxShadow h5{
   font-weight: 500;
@@ -26,6 +25,24 @@
 }
 
 .backgroundBtn{
-
-  background-color: rgba(25 , 135, 84, .15);
+  background-color: #def9ec;
+  font-weight: 600;
   }
+.text-bold{
+  font-weight: 500;
+}
+
+.Catigory{
+  min-height: 80vh;
+  color: black;
+}
+
+h3{
+  font-size: 19px;
+}
+
+.NameCardEn{
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  /* height: 4.2vh; */
+}

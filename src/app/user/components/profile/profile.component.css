@@ -1,0 +1,29 @@
+@import"../../../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+.text-bold{
+  font-weight: 500;
+}
+
+.colorPassword{
+background-color: #def9ec;
+color: #539165;
+}
+input:nth-of-type(checkbox) {
+  width: 20px;
+  height: 20px;
+}
+
+.bg-gray{
+  background-color: #fcfcfc;
+  border-radius: 4px;
+}
+h3 ,label, p, h2,h4{
+  color: black;
+}
+.btn-success{
+  background-color:#539165 ;
+  border: #539165;
+}
+
+.minHiegt{
+  min-height: 80vh;
+}

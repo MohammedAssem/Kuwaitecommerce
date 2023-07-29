@@ -6,7 +6,7 @@
 
 .borderAdBoxShadow h5{
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   line-height:1.2 ;
 }
 
@@ -24,9 +24,36 @@
   left: 5%;
 }
 
-
-
-
+.text-bold{
+  font-weight: bold;
+}
 .backgroundBtn{
 background-color: rgba(25 , 135, 84, .15);
+}
+
+.btnCarousl{
+  width: 9px;
+  height:8px;
+  border-radius: 50%;
+}
+
+.btnCarousl.active{
+  width: 60px;
+  height: 10px;
+  border-radius: 30% !important;
+  padding: 0;
+}
+.bgF6F6F6{
+  background-color: #F6F6F6;
+}
+
+#carouselExampleIndicators  {
+  background-color: #fff2d8;
+}
+
+
+.bgCircle{
+  border-radius: 30%;
+  translate:10%;
+  background-color: aquamarine;
 }

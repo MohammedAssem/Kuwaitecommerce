@@ -2,57 +2,81 @@
   <div class="row" style="min-height: 80vh;">
     <div class="col-md-3   border">
       <div class="container-fluid ">
-        <h3 class="py-1">Filter</h3>
-        <p>Order status</p>
-        <div class="form-group">
-          <input type="text" type="checkbox">
-          <label for="my-input" class="px-2 py-1">Delivered</label>
-        </div>
-        <div class="form-group">
-          <input type="text" type="checkbox">
-          <label for="my-input" class="px-2 py-1">Cancelled</label>
-        </div>
-        <div class="form-group mb-2">
-          <input type="text" type="checkbox">
-          <label for="my-input" class="px-2 py-1">Confirmed</label>
+        <br>
+        <h3 class="py-1 fa-xl">Filter</h3>
+
+        <div class="py-1">
+          <p class="form-lable">Order status</p>
+          <input type="radio" name="status" [(ngModel)]="status" (change)="addStatus()" value="2">
+          <label class="px-2 py-1">Delivered</label><br>
+          <input type="radio" name="status" [(ngModel)]="status" (change)="addStatus()" value="3">
+          <label class="px-2 py-1">Cancelled</label><br>
+          <input type="radio" name="status" [(ngModel)]="status" (change)="addStatus()" value="4">
+          <label class="px-2 py-1">In Delivery</label><br>
+          <input type="radio" name="status" [(ngModel)]="status" (change)="addStatus()" value="5">
+          <label class="px-2 py-1">In Confirmed</label>
+
         </div>
 
-        <p class="py-2">Time</p>
-        <div class="form-group">
-          <input id="my-input" class="custom-range" type="radio">
-          <label for="my-input" class="px-2 py-1">3 months</label>
-          <br>
+        <div class="py-3">
+          <p class="my-3 fa-xl ">Time</p>
+          <input type="radio" name="date" [(ngModel)]="date" (change)="adddate()" value="3m">
+          <label class="px-2 py-1">3 months</label><br>
+          <input type="radio" name="date" [(ngModel)]="date" (change)="adddate()" value="6m">
+          <label class="px-2 py-1">6 months</label><br>
+          <input type="radio" name="date" [(ngModel)]="date" (change)="adddate()" value="1y">
+          <label class="px-2 py-1">last year</label><br>
+          <input type="radio" name="date" [(ngModel)]="date" (change)="adddate()" value="all">
+          <label class="px-2 py-1">All Time</label>
 
-          <input id="my-input" class="custom-range" type="radio">
-          <label for="my-input" class="px-2 py-1">6 months</label><br>
 
-          <input id="my-input" class="custom-range" type="radio">
-          <label for="my-input" class="px-2 py-1">last year</label> <br>
-
-          <input id="my-input" class="custom-range" type="radio">
-          <label for="my-input" class="px-2 py-1">All Time</label> <br>
         </div>
+
       </div>
     </div>
 
     <div class="col-md-6 ">
       <div class="border rounded p-3">
         <div class="row">
-          <div class="col-4">
-            <div class="  px-3">
-              <h3>Delivered</h3>
-              <p>14,June,2023 <br>
-                OI3132312wq</p>
-            </div>
-          </div>
           <div class="col-8">
-            <div class="">
+            <ng-container *ngFor="let item of Orders">
+              <div class="col-4 border-end ">
+                <div class="  px-3">
+                  <h3 class="text-success"> <span *ngIf="item.status=='2'">Delivered</span> <span
+                      *ngIf="item.status=='3'">Cancelled</span><span *ngIf="item.status=='4'">In Delivery</span><span
+                      *ngIf="item.status=='5'">In Confirmed</span> </h3>
+                  <p class="form-lable"> {{item.date}} </p>
+                </div>
+              </div>
 
-            </div>
+              <div class="col-5">
+                <ng-container *ngFor="let itemPro of item.products">
+                  <div class="row">
+                    <div class="col-4">
+                      <img [src]="itemPro.main_image" width="100" height="100" alt="">
+                    </div>
+                    <div class="col-6">
+                      <div class="">
+
+                        <p class="form-lable  px-2">{{itemPro.name_en}} Kuwaitec United</p>
+                        <p class="form-lable  px-2">{{itemPro.piece_price}} Kuwaitec United</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+
+
+              </div>
+              <div class="col-1">
+                <div class=" border border-1 d-flex justify-content-center align-items-center ">
+                  <i class="fa-solid fa-chevron-right fa-lg"></i>
+                </div>
+              </div>
+            </ng-container>
+
+
           </div>
-
         </div>
       </div>
     </div>
   </div>
-</div>

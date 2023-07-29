@@ -6,13 +6,15 @@ import { HomeComponent } from './interface/component/home/home.component';
 import { DetailsProductComponent } from './interface/component/details-product/details-product.component';
 import { DeliveryComponent } from './interface/component/delivery/delivery.component';
 import { OualityControlComponent } from './interface/component/ouality-control/ouality-control.component';
+import { ContactusComponent } from './interface/component/contactus/contactus.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
-  {path:"details/:id",component:DetailsProductComponent},
+  {path:"details/:code",component:DetailsProductComponent},
   {path:"delivery",component:DeliveryComponent},
   {path:"quality",component:OualityControlComponent},
-  {path:"categories",component:CategoriesComponent},
+  {path:"categories/:id",component:CategoriesComponent},
+  {path:"Contactus",component:ContactusComponent},
   {path:"user", loadChildren:()=>import('./user/user.module').then((x)=>x.UserModule)}
 ];
 

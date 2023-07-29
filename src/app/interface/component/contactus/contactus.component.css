@@ -1,0 +1,23 @@
+@import"../../../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+.text-bold{
+  font-weight: bold;
+}
+
+.input-with-icon ,.form-group {
+  position: relative;
+}
+
+
+a{text-decoration:none;cursor: pointer ;}
+
+
+
+.form-group li{
+  list-style-type: none;
+}
+.dropdown-menu{
+  --bs-dropdown-min-width: 55px !important;
+}
+.pl-2{
+  padding-left: 15px;
+}

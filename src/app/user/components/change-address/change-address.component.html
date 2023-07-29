@@ -1,16 +1,64 @@
 <div class="pairt">
-<div class="row  h-100 w-100">
-  <div class="col-12 col-md-5 m-auto h-75  bg-light rounded">
-    <div class=" text-center">
-      <img src="../../../../assets/img/Dane.png" class=" img-fluid py-5" alt="">
-      <h3 class="text-success pb-3 text-center">Payment received</h3>
-      <div class="mx-3 border rounded my-2 p-2 text-start">
-        <p>Delivery to :</p>
-        <p>Yasser Masry</p>
-        <p>Delivery by : 24 nov , wed</p>
+  <div class="row   py-md-5 w-100 mx-0 ">
+    <div class="col-12 col-md-6 m-auto    bg-light rounded">
+      <div class="px-3 pt-4 col-mt-5">
+        <h1>Add new Address</h1>
       </div>
-      <button class="btn btn-success m-auto text-center my-3">Continue Shopping</button>
+      <div class="row">
+        <div class="col-8 col-h-100 col-md-10 col-lg-6 mx-auto ">
+          <div class="">
+
+            <form [formGroup]="ChangeAddress" (ngSubmit)="ChangeAddressMethod()">
+              <div class="form-group py-2" style="display: none;">
+                <input placeholder="Enter your name" class="form-control" type="text" formControlName="id"
+                  [(ngModel)]="changeAddrss.id">
+
+              </div>
+              <div class="form-group py-2">
+                <input placeholder="Enter your name" class="form-control" type="text" formControlName="name"
+                  [(ngModel)]="changeAddrss.name">
+
+              </div>
+              <div class="form-group py-1">
+                <input class="form-control  " placeholder="enter your Phone Number" type="text"
+                  formControlName="phone_number" [(ngModel)]="changeAddrss.phone_number">
+
+              </div>
+              <div class="form-group pt-2">
+                <input class="form-control  " [(ngModel)]="changeAddrss.area_name" placeholder="Enter your area  "
+                  type="text" formControlName="area_name">
+
+              </div>
+              <div class="form-group pt-2">
+                <input class="form-control  " [(ngModel)]="changeAddrss.street_name" placeholder="Enter your Street "
+                  type="text" formControlName="street_name">
+
+              </div>
+              <input class="form-control mt-2 " [(ngModel)]="changeAddrss.block" type="text"
+                placeholder="enter your Block " formControlName="block">
+
+              <input class="form-control mt-2 " [(ngModel)]="changeAddrss.additional_instructions" type="text"
+                placeholder="enter your additional_instructions" formControlName="additional_instructions">
+
+              <p class=" py-1 pt-2">Please select your AddressType:</p>
+              <input type="radio" [(ngModel)]="changeAddrss.address_type" formControlName="address_type" value="1">
+              <label class="mx-2"> Home</label>
+              <input type="radio" formControlName="address_type" value="2">
+              <label class="mx-2"> Farm</label>
+              <input type="radio" formControlName="address_type" value="3">
+              <label>Other </label><br><br>
+
+              <div class="mb-3 form-check">
+                <input type="checkbox" [(ngModel)]="changeAddrss.default" class="form-check-input"
+                  formControlName="default">
+                <label class="form-check-label" for="exampleCheck1">Use as default address</label>
+              </div>
+              <button class="btn btn-success my-2 mb-5" type="submit" [disabled]="ChangeAddress.invalid">Update
+                Address</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </div>

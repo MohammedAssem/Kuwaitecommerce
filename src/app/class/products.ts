@@ -1,6 +1,12 @@
 export interface Products {
-  body: string;
+  code: string;
   id: number;
-  title: string
-  userId: number
+  main_image: string;
+  name_ar: string;
+  name_en: string;
+  price: number;
+  price_before_sale: any
+  rate:number
 }
+
+
